@@ -2,15 +2,15 @@ import { TaskStatus } from '../task-status.enum'
 import { IsEnum, IsNotEmpty } from 'class-validator'
 
 export class UpdateTaskDto {
-    @IsNotEmpty()
-    id: string
+  @IsNotEmpty()
+  id: string
 
-    @IsNotEmpty()
-    title: string
+  @IsNotEmpty()
+  title: string
 
-    @IsNotEmpty()
-    description: string
+  @IsNotEmpty()
+  description: string
 
-    @IsEnum(TaskStatus)
-    status: TaskStatus
+  @IsEnum(TaskStatus)
+  status: TaskStatus
 }

@@ -7,30 +7,30 @@ import { Task } from './task.entity'
 
 @Controller('tasks')
 export class TasksController {
-    constructor(private taskService: TasksService) {}
+  constructor(private taskService: TasksService) {}
 
-    @Get()
-    getTasks(@Query() getTasksFilterDto: GetTasksFilterDto): Promise<Task[]> {
-        return this.taskService.getTasks(getTasksFilterDto)
-    }
+  @Get()
+  getTasks(@Query() getTasksFilterDto: GetTasksFilterDto): Promise<Task[]> {
+    return this.taskService.getTasks(getTasksFilterDto)
+  }
 
-    @Get('/:id')
-    getTaskById(@Param('id') id: string): Promise<Task> {
-        return this.taskService.getTaskById(id)
-    }
+  @Get('/:id')
+  getTaskById(@Param('id') id: string): Promise<Task> {
+    return this.taskService.getTaskById(id)
+  }
 
-    @Post()
-    createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
-        return this.taskService.createTask(createTaskDto)
-    }
+  @Post()
+  createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
+    return this.taskService.createTask(createTaskDto)
+  }
 
-    @Patch()
-    updateTask(@Body() updateTaskDto: UpdateTaskDto): Promise<Task> {
-        return this.taskService.updateTask(updateTaskDto)
-    }
+  @Patch()
+  updateTask(@Body() updateTaskDto: UpdateTaskDto): Promise<Task> {
+    return this.taskService.updateTask(updateTaskDto)
+  }
 
-    @Delete('/:id')
-    deleteTask(@Param('id') id: string): Promise<string> {
-        return this.taskService.deleteTask(id)
-    }
+  @Delete('/:id')
+  deleteTask(@Param('id') id: string): Promise<string> {
+    return this.taskService.deleteTask(id)
+  }
 }
